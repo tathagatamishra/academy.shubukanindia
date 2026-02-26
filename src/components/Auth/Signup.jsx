@@ -33,7 +33,9 @@ export default function Signup({ role }) {
 
     // TODO: call backend here
 
-    router.push(`/login?role=${role}`);
+    router.push(
+      `/signup/verify?role=${role}&email=${encodeURIComponent(formData.email)}`,
+    );
   };
 
   const handleChange = (e) => {
@@ -136,16 +138,6 @@ export default function Signup({ role }) {
                     onChange={handleChange}
                     required
                   />
-
-                  <InkInput
-                    label="Instructor ID"
-                    name="instructorId"
-                    type="text"
-                    placeholder="INS-XXX"
-                    value={formData.instructorId}
-                    onChange={handleChange}
-                    required
-                  />
                 </>
               )}
 
@@ -170,7 +162,7 @@ export default function Signup({ role }) {
               />
             </div>
 
-            <div className="flex items-start gap-2">
+            {/* <div className="flex items-start gap-2">
               <input
                 type="checkbox"
                 id="terms"
@@ -178,19 +170,17 @@ export default function Signup({ role }) {
                 required
               />
               <label htmlFor="terms" className="text-sm text-[#5A5854]">
-                I agree to the Terms & Conditions and Privacy Policy of
-                Shubukan India
+                I agree to the Terms & Conditions and Privacy Policy of Shubukan
+                India
               </label>
-            </div>
+            </div> */}
 
             <SealButton type="submit" className="w-full">
               Create Account
             </SealButton>
 
             <div className="text-center text-sm">
-              <span className="text-[#5A5854]">
-                Already have an account?{" "}
-              </span>
+              <span className="text-[#5A5854]">Already have an account? </span>
               <button
                 type="button"
                 onClick={() => router.push(`/login?role=${role}`)}
