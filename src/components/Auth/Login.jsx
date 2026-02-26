@@ -19,7 +19,9 @@ export default function Login({ role }) {
     // TODO: call backend
     console.log("Login:", { role, email, password });
 
-    router.push("/"); // redirect after login
+    router.push(
+      `/login/verify?role=${role}&email=${encodeURIComponent(email)}`,
+    ); // redirect after login
   };
 
   return (
