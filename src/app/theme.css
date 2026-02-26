@@ -1,0 +1,231 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* Japanese Scroll Theme Colors */
+  --rice-paper: #F5E9D8;
+  --ink-black: #1C1A17;
+  --vermillion: #A61B1B;
+  --muted-gold: #C6A75E;
+  --charcoal: #2A2A2A;
+
+  --background: #F5E9D8;
+  --foreground: #1C1A17;
+  --card: #FEFBF5;
+  --card-foreground: #1C1A17;
+  --popover: #FEFBF5;
+  --popover-foreground: #1C1A17;
+  --primary: #A61B1B;
+  --primary-foreground: #FEFBF5;
+  --secondary: #C6A75E;
+  --secondary-foreground: #1C1A17;
+  --muted: #E8DCC8;
+  --muted-foreground: #5A5854;
+  --accent: #C6A75E;
+  --accent-foreground: #1C1A17;
+  --destructive: #A61B1B;
+  --destructive-foreground: #FEFBF5;
+  --border: rgba(28, 26, 23, 0.15);
+  --input: transparent;
+  --input-background: #FEFBF5;
+  --switch-background: #C6A75E;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #C6A75E;
+  --chart-1: #A61B1B;
+  --chart-2: #C6A75E;
+  --chart-3: #2A2A2A;
+  --chart-4: #E8DCC8;
+  --chart-5: #5A5854;
+  --radius: 0.75rem;
+  --sidebar: #FEFBF5;
+  --sidebar-foreground: #1C1A17;
+  --sidebar-primary: #A61B1B;
+  --sidebar-primary-foreground: #FEFBF5;
+  --sidebar-accent: #E8DCC8;
+  --sidebar-accent-foreground: #1C1A17;
+  --sidebar-border: rgba(28, 26, 23, 0.1);
+  --sidebar-ring: #C6A75E;
+}
+
+.dark {
+  --background: #1C1A17;
+  --foreground: #F5E9D8;
+  --card: #2A2A2A;
+  --card-foreground: #F5E9D8;
+  --popover: #2A2A2A;
+  --popover-foreground: #F5E9D8;
+  --primary: #A61B1B;
+  --primary-foreground: #F5E9D8;
+  --secondary: #C6A75E;
+  --secondary-foreground: #1C1A17;
+  --muted: #3A3834;
+  --muted-foreground: #C8BEB0;
+  --accent: #C6A75E;
+  --accent-foreground: #1C1A17;
+  --destructive: #A61B1B;
+  --destructive-foreground: #F5E9D8;
+  --border: rgba(245, 233, 216, 0.15);
+  --input: rgba(245, 233, 216, 0.1);
+  --ring: #C6A75E;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #A61B1B;
+  --chart-2: #C6A75E;
+  --chart-3: #F5E9D8;
+  --chart-4: #5A5854;
+  --chart-5: #E8DCC8;
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #F5E9D8;
+  --sidebar-primary: #A61B1B;
+  --sidebar-primary-foreground: #F5E9D8;
+  --sidebar-accent: #3A3834;
+  --sidebar-accent-foreground: #F5E9D8;
+  --sidebar-border: rgba(245, 233, 216, 0.1);
+  --sidebar-ring: #C6A75E;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom Japanese theme colors */
+  --color-rice-paper: var(--rice-paper);
+  --color-ink-black: var(--ink-black);
+  --color-vermillion: var(--vermillion);
+  --color-muted-gold: var(--muted-gold);
+  --color-charcoal: var(--charcoal);
+}
+
+
+:root {
+  /* h1 */
+  --h1-font-size: 1.875rem;
+  /* 30px */
+  --h1-line-height: 1.2;
+  --h1-font-weight: 700;
+  --h1-color: #A61B1B;
+
+  /* h2 */
+  --h2-font-size: 1.25rem;
+  /* 24px */
+  --h2-line-height: calc(1.75 / 1.25);
+  --h2-font-weight: 700;
+}
+
+@media (min-width: 40rem) {
+  /* 640px */
+  :root {
+    /* h1 */
+    --h1-font-size: 2.25rem;
+    /* 36px */
+    --h1-line-height: 1.111111;
+    --h1-font-weight: 800;
+
+    /* h2 */
+    --h2-font-size: 1.5rem;
+    /* 24px */
+    --h2-line-height: calc(2 / 1.5);
+    --h2-font-weight: 700;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      repeating-linear-gradient(0deg,
+        transparent,
+        transparent 2px,
+        rgba(28, 26, 23, 0.02) 2px,
+        rgba(28, 26, 23, 0.02) 4px);
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--h1-font-weight);
+    color: var(--h1-color);
+  }
+
+  h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--h2-line-height);
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}

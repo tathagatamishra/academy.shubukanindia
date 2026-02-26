@@ -1,0 +1,355 @@
+/* Japanese Scroll Theme */
+
+/* Seigaiha Wave Pattern */
+.pattern-seigaiha {
+  background-image: 
+    radial-gradient(circle at 100% 50%, transparent 15%, rgba(28, 26, 23, 0.03) 16%, rgba(28, 26, 23, 0.03) 20%, transparent 21%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 15%, rgba(28, 26, 23, 0.03) 16%, rgba(28, 26, 23, 0.03) 20%, transparent 21%, transparent);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Asanoha Pattern */
+.pattern-asanoha {
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(28, 26, 23, 0.02) 10px, rgba(28, 26, 23, 0.02) 11px),
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(28, 26, 23, 0.02) 10px, rgba(28, 26, 23, 0.02) 11px);
+}
+
+/* Washi Paper Texture */
+.washi-texture {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Scroll Card - Japanese scroll style */
+.scroll-card {
+  position: relative;
+  background: linear-gradient(to bottom, #FEFBF5 0%, #F5E9D8 100%);
+  border: 2px solid rgba(28, 26, 23, 0.15);
+  border-radius: 12px;
+  box-shadow: 
+    0 2px 8px rgba(28, 26, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.scroll-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(28, 26, 23, 0.01) 20px,
+      rgba(28, 26, 23, 0.01) 21px
+    );
+  pointer-events: none;
+}
+
+/* Ink Brush Divider */
+.brush-divider {
+  height: 3px;
+  background: linear-gradient(to right, transparent, #1C1A17, transparent);
+  opacity: 0.2;
+  position: relative;
+}
+
+.brush-divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 5px;
+  background: 
+    url("data:image/svg+xml,%3Csvg width='100' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,2.5 Q25,1 50,2.5 T100,2.5' stroke='%231C1A17' stroke-width='1' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 100px 5px;
+}
+
+/* Hanko Stamp Style */
+.hanko-stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #A61B1B;
+  border-radius: 4px;
+  transform: rotate(-5deg);
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hanko-stamp::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+}
+
+/* Ink Input Field */
+.ink-input {
+  background: #FEFBF5;
+  border: none;
+  border-bottom: 2px solid rgba(28, 26, 23, 0.2);
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+  padding: 8px 12px;
+}
+
+.ink-input:focus {
+  outline: none;
+  border-bottom-color: #A61B1B;
+  background: linear-gradient(to bottom, transparent 90%, rgba(166, 27, 27, 0.05) 100%);
+}
+
+/* Belt Badge for Kyu levels */
+.belt-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.belt-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.1) 4px,
+    rgba(255, 255, 255, 0.1) 8px
+  );
+  pointer-events: none;
+}
+
+/* Timer Ring Animation */
+@keyframes timer-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.timer-warning {
+  animation: timer-pulse 1s ease-in-out infinite;
+}
+
+/* Stamp Animation */
+@keyframes stamp-in {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(-5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-5deg);
+    opacity: 1;
+  }
+}
+
+.stamp-animation {
+  animation: stamp-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Scroll Slide Transition */
+.scroll-slide-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.scroll-slide-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.scroll-slide-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.scroll-slide-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+/* Question Navigator Tile */
+.question-tile {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(28, 26, 23, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #FEFBF5;
+}
+
+.question-tile:hover {
+  background: #E8DCC8;
+  border-color: #C6A75E;
+  transform: translateY(-2px);
+}
+
+.question-tile.answered {
+  background: #C6A75E;
+  color: #1C1A17;
+  border-color: #C6A75E;
+}
+
+.question-tile.current {
+  background: #A61B1B;
+  color: #FEFBF5;
+  border-color: #A61B1B;
+  box-shadow: 0 0 0 3px rgba(166, 27, 27, 0.2);
+}
+
+/* Sidebar Menu Item */
+.sidebar-item {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-item:hover {
+  background: rgba(28, 26, 23, 0.05);
+}
+
+.sidebar-item.active {
+  background: #A61B1B;
+  color: #FEFBF5;
+}
+
+.sidebar-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: #FEFBF5;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Red Seal Button */
+.seal-button {
+  position: relative;
+  background: #A61B1B;
+  color: #FEFBF5;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 
+    0 4px 6px rgba(166, 27, 27, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.seal-button:hover {
+  background: #8A1616;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(166, 27, 27, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.seal-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 4px rgba(166, 27, 27, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Kata Polaroid Style */
+.kata-polaroid {
+  background: #FEFBF5;
+  padding: 12px;
+  padding-bottom: 48px;
+  box-shadow: 
+    0 4px 8px rgba(28, 26, 23, 0.15),
+    0 8px 16px rgba(28, 26, 23, 0.1);
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kata-polaroid:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 
+    0 8px 16px rgba(28, 26, 23, 0.2),
+    0 12px 24px rgba(28, 26, 23, 0.15);
+}
+
+/* Loading State - Brush Stroke */
+@keyframes brush-stroke {
+  0% {
+    transform: translateX(-100%) scaleX(0);
+  }
+  50% {
+    transform: translateX(0) scaleX(1);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0);
+  }
+}
+
+.loading-brush {
+  position: relative;
+  height: 4px;
+  background: rgba(28, 26, 23, 0.1);
+  overflow: hidden;
+}
+
+.loading-brush::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #A61B1B;
+  animation: brush-stroke 1.5s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-card {
+    border-radius: 8px;
+  }
+  
+  .question-tile {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .sidebar-item {
+    padding: 10px 12px;
+  }
+}
