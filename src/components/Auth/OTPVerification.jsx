@@ -1,18 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ScrollCard from "../UI/ScrollCard";
 import SealButton from "../UI/SealButton";
 import OTPInput from "../UI/OTPInput";
 import BackButton from "../UI/BackButton";
+import { student } from "../variables";
 
-export default function OTPVerification({ email, onVerify, onResend }) {
+export default function OTPVerification({ email }) {
+  const router = useRouter()
   const [otp, setOtp] = useState("");
+
+  const onVerify = (username) => {
+    router.push(`/student/${username}`)
+  };
+  const onResend = () => {};
 
   const handleVerify = () => {
     if (otp.length === 6) {
-      onVerify();
+      onVerify(student.userName);
     }
   };
 
@@ -33,9 +41,7 @@ export default function OTPVerification({ email, onVerify, onResend }) {
               />
             </div>
 
-            <h2 className="font-bold text-[#1C1A17] mb-2">
-              Verify Your Email
-            </h2>
+            <h2 className="font-bold text-[#1C1A17] mb-2">Verify Your Email</h2>
 
             <p className="text-sm text-[#5A5854]">
               We've sent a 6-digit code to
