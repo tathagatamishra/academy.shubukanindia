@@ -1,0 +1,32 @@
+exports.student = {
+  _id: { $oid: "68ddeea9c69c82f2a0226c94" },
+  name: "Tathagata Mishra",
+  email: "tathagatamishra007@gmail.com",
+  mobile: "7602728880",
+  userName: "tathagatamishra",
+  presentKyu: "1th Kyu - Brown Belt",
+  lastCertificateNum: "",
+  profileImage: "https://cdn-icons-png.flaticon.com/512/5046/5046943.png",
+  instructorName: "Sabyasachi Giri",
+  instructorId: "68dfc2a8f826b400e4f4bba4",
+  isVerified: true,
+  isDeleted: false,
+  createdAt: { $date: "2025-10-02T03:16:57.423Z" },
+  updatedAt: { $date: "2026-01-11T15:21:46.085Z" },
+  __v: 0,
+  instructorIdentity: "Shubukan India Head",
+};
+
+exports.instructor = {
+  _id: { $oid: "68dfc2a8f826b400e4f4bba4" },
+  name: "Sabyasachi Giri",
+  email: "androidsabya@gmail.com",
+  mobile: "9851852499",
+  instructorId: "657WZOWVT0",
+  profileImage: "",
+  isVerified: true,
+  isDeleted: false,
+  createdAt: { $date: "2025-10-03T12:33:44.074Z" },
+  updatedAt: { $date: "2026-01-11T16:11:55.840Z" },
+  __v: 0,
+};
