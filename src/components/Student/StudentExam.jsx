@@ -19,6 +19,7 @@ import BrushDivider from "../UI/BrushDivider";
 import BeltBadge from "../UI/BeltBadge";
 import SealButton from "../UI/SealButton";
 import Image from "next/image";
+import { mockExams } from "../variables";
 
 export default function StudentExam({ student }) {
   const pathname = usePathname();
@@ -37,7 +38,7 @@ export default function StudentExam({ student }) {
   const onNavigate = (path) => {
     router.push(path);
   };
-  const onLogout = () => {};
+  const onLogout = () => {onNavigate('/')};
 
   const handleNavClick = (id) => {
     onNavigate(id);
@@ -87,24 +88,53 @@ export default function StudentExam({ student }) {
       {/* Main */}
       <main className="flex-1 p-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="flex flex-row gap-[20px] mb-8">
-            <Image
-              src={student.profileImage}
-              width={480}
-              height={480}
-              alt={student.name}
-              className="w-[80px] h-[80px] object-contain rounded-full shadow bg-[#fff] border border-4 border-[#fff]"
-            />
-            <div>
-              <h1 className="text-3xl font-bold text-[#1C1A17] mb-2">
-                Upcoming Exam
-              </h1>
-              <p className="text-[#5A5854]">
-                Track your progress and prepare for your next exam
-              </p>
-            </div>
+          <button
+            onClick={() => onNavigate(basePath)}
+            className="mb-6 flex items-center gap-2 text-[#1C1A17] hover:text-[#A61B1B] transition-colors"
+          >
+            ← Back to Dashboard
+          </button>
+          <h1 className="text-3xl font-bold text-[#1C1A17] mb-8">
+            Upcoming Exams
+          </h1>
+          <div className="space-y-4">
+            {mockExams.map((exam) => (
+              <div key={exam.id} className="scroll-card p-6">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#1C1A17] mb-2">
+                      {exam.examSet}
+                    </h3>
+                    <p className="text-sm text-[#5A5854] mb-4">
+                      {exam.totalQuestionCount} Questions • {exam.examDuration}{" "}
+                      Minutes • {exam.eachQuestionMarks} Mark(s) Each
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="belt-badge text-sm px-3 py-1"
+                        style={{
+                          backgroundColor: "#C6A75E",
+                          color: "#1C1A17",
+                        }}
+                      >
+                        {exam.kyu}
+                      </span>
+                      <span className="text-sm text-[#5A5854]">
+                        {exam.isPublic ? "Public Exam" : "Private Exam"}
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => handleStartExam(exam.id)}
+                    className="seal-button"
+                  >
+                    Start Exam
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
+          {/* <Toaster position="top-right" /> */}
         </div>
       </main>
     </div>

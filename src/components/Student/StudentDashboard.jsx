@@ -64,7 +64,7 @@ export default function StudentDashboard({ student }) {
   const onNavigate = (path) => {
     router.push(path);
   };
-  const onLogout = () => {};
+  const onLogout = () => {onNavigate('/')};
 
   const handleNavClick = (id) => {
     onNavigate(id);
@@ -174,7 +174,7 @@ export default function StudentDashboard({ student }) {
                     <div className="flex items-center gap-2 text-[#5A5854]">
                       <Award className="w-4 h-4" />
                       <span className="text-sm">
-                        Certificate: {student.lastCertificateNum}
+                        Dojo: {student.lastCertificateNum}
                       </span>
                     </div>
                   </div>

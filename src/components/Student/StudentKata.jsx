@@ -26,7 +26,6 @@ export default function StudentKata({
   student,
   studentId,
   existingImages = [],
-  onBack,
   onUpload,
   onDelete,
 }) {
@@ -46,7 +45,7 @@ export default function StudentKata({
   const onNavigate = (path) => {
     router.push(path);
   };
-  const onLogout = () => {};
+  const onLogout = () => {onNavigate('/')};
 
   const handleNavClick = (id) => {
     onNavigate(id);
@@ -129,7 +128,7 @@ export default function StudentKata({
       <main className="flex-1 p-8">
         <div className="max-w-6xl mx-auto">
           <button
-            onClick={onBack}
+            onClick={() => onNavigate(basePath)}
             className="mb-6 flex items-center gap-2 text-[#1C1A17] hover:text-[#A61B1B] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -141,7 +140,7 @@ export default function StudentKata({
               Kata Gallery
             </h1>
             <p className="text-[#5A5854]">
-              Upload and manage your kata practice images (Maximum 10 images)
+              Upload and manage your Katasheet images (Maximum 10 images)
             </p>
           </div>
 

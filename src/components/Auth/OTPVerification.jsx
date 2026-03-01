@@ -8,19 +8,27 @@ import SealButton from "../UI/SealButton";
 import OTPInput from "../UI/OTPInput";
 import BackButton from "../UI/BackButton";
 import { student } from "../variables";
+import { instructor } from "../variables";
 
-export default function OTPVerification({ email }) {
-  const router = useRouter()
+export default function OTPVerification({ email, role }) {
+  const router = useRouter();
   const [otp, setOtp] = useState("");
 
   const onVerify = (username) => {
-    router.push(`/student/${username}`)
+    router.push(`/${role}/${username}`);
   };
   const onResend = () => {};
 
   const handleVerify = () => {
+    console.log(role);
+    console.log(role.userName);
+
     if (otp.length === 6) {
-      onVerify(student.userName);
+      onVerify(
+        role == "student"
+          ? student.userName
+          : role == "instructor" && instructor.userName,
+      );
     }
   };
 
